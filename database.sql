@@ -67,3 +67,16 @@ CREATE TABLE AI_Recommendations (
     FOREIGN KEY (user_id) REFERENCES Users(user_id),
     FOREIGN KEY (product_id) REFERENCES Products(product_id)
 );
+CREATE TABLE cart (
+    cart_id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id INT,
+    product_id INT,
+    quantity INT DEFAULT 1,
+    added_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (user_id) REFERENCES users(user_id),
+    FOREIGN KEY (product_id) REFERENCES products(product_id)
+);
+INSERT INTO users (name, email, password)
+VALUES
+('Jnaneswari', 'jnaneswari@gmail.com', 'password123'),
+('Keerthi', 'keerthi@gmail.com', 'password456');
